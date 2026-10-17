@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content=
+        "width=device-width, initial-scale=1.0" />
+    <title>Structure of HTML Document</title>
+</head>
+<body>
+    <ul>
+        {# comment in jinja #}
+        {% for key in marks.keys() %}
+        <li>The marks of {{key}} is {{ marks.get(key) }}
+        {% if marks.get(key) > 80 %}
+            <span>Good</span>
+        {% elif marks.get(key) >= 50 and marks.get(key) < 80 %}
+            <span> Average </span>
+        {% else %}   
+            <span>Better</span>     
+        </li>
+        {% endif %}
+        {% endfor %}
+    </ul>
+</body>
+</html>
